@@ -1,0 +1,5 @@
+We had to additionally add the other group member to the repository as collaborator.
+
+Furthermore, we first had to create a Java Module, since we created an empty repository on git before.
+
+We also added .gitignore file which we copied from a standard java project
