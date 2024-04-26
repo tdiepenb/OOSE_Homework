@@ -47,10 +47,10 @@ let examinationHead = {
 
 let departmentHead = {
     getInfo() {
-        return `${super.getInfo()} and has the title Head of the Department`
+        return `${this.__proto__.getInfo()} and has the title Head of the Department`
     },
     getDescription() {
-        return `${super.getDescription()} and has the title Head of the Department`
+        return `${this.__proto__.getDescription()} and has the title Head of the Department`
     }
 }
 
@@ -71,4 +71,4 @@ let examinationHeadCaroJungheim = makeExaminationHead(profCaroJungheim)
 let departmentHeadCaroJungheim = makeDepartmentHead(profCaroJungheim)
 
 console.log(examinationHeadCaroJungheim.getInfo())
-// console.log(departmentHeadCaroJungheim.getInfo())
+console.log(departmentHeadCaroJungheim.getInfo())
