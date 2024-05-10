@@ -1,0 +1,5 @@
+Explanation:
+    1.  First "student1 + student2" calls the method student1.__add__ which creates a new LearningGroup object and
+        appends student1 and student2 to the list of LearningGroup object.
+    2.  Then "+ student3" calls the __add__ method on the LearningGroup object which appends student3 to the list of the
+        LearningGroup object, which is then assigned to the group2 variable.
