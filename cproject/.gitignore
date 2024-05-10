@@ -1,0 +1,3 @@
+# Intelij Project Settings Ignore
+/.idea
+/cmake-build-debug
