@@ -54,9 +54,9 @@ int main(int argc, char** argv) {
     printf("Please enter how many students you want to store: ");
     scanf("%d", &number);
 
-    struct StudentDataBase* sDB = malloc(sizeof(struct StudentDataBase));//TODO: Allocate memory for Student Database
+    struct StudentDataBase* sDB = (struct StudentDataBase*) malloc(sizeof(struct StudentDataBase));//TODO: Allocate memory for Student Database
     if(sDB != NULL) {
-        sDB->data = malloc(sizeof(struct Student) * number);
+        sDB->data = (struct Student*) malloc(sizeof(struct Student) * number);
         if(sDB->data != NULL) {
             sDB->size = number;
 
