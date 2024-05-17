@@ -3,7 +3,7 @@ package homework2exercise1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Seminar<T extends IStudent> {
+public class Seminar {
     private String name;
     private String id;
     private List<IStudent> participants;
@@ -45,14 +45,14 @@ public class Seminar<T extends IStudent> {
 
 
     public static void main(String[] args) {
-        Seminar<PhD> phdStudents = new Seminar<PhD>("Doktorandenseminar", "");
+        Seminar phdStudents = new Seminar("Doktorandenseminar", "");
         phdStudents.addParticipant(new PhD("Adrian", "Software Engineering"));
         phdStudents.addParticipant(new PhD("Alice", "Software Engineering"));
         phdStudents.addParticipant(new PhD("Bob", "Algorithmics"));
         phdStudents.addParticipant(new PhD("Charly", "Visual Analytics"));
         phdStudents.addParticipant(new Student("Zedrick", "Software Engineering"));
 
-        Seminar<Student> bachelorStudents = new Seminar<Student>("Seminar Software Engineering", "SSE");
+        Seminar bachelorStudents = new Seminar("Seminar Software Engineering", "SSE");
         bachelorStudents.addParticipant(new Student("Zedrick", "Wirtschaftsinformatik"));
         bachelorStudents.addParticipant(new Student("Yvonne", "Wirtschaftsinformatik"));
         bachelorStudents.addParticipant(new Student("Wladislav", "Mathematik"));
