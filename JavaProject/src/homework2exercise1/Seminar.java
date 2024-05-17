@@ -6,7 +6,7 @@ import java.util.List;
 public class Seminar<T extends IStudent> {
     private String name;
     private String id;
-    private List<T> participants;
+    private List<IStudent> participants;
 
     //TODO: List of participants
 
@@ -17,18 +17,26 @@ public class Seminar<T extends IStudent> {
         this.participants = new ArrayList<>();
     }
 
-    public void addParticipant(T participant) {
+    public <E extends IStudent> void addParticipant(E participant) {
         //TODO: Add to list of participants
         participants.add(participant);
     }
 
-    public List<T> getParticipants() {
+    public void addParticipants(List<? extends IStudent> newParticipants) {
+        for(IStudent participant : newParticipants) {
+            if (!participants.contains(participant)) {
+                participants.add(participant);
+            }
+        }
+    }
+
+    public List<IStudent> getParticipants() {
         return participants;
     }
 
-    public List<T> getParticipantsFromStudyProgram(String studyProgram) {
-        List<T> filteredList;
-        List<T> originalList = this.getParticipants();
+    public List<IStudent> getParticipantsFromStudyProgram(String studyProgram) {
+        List<IStudent> filteredList;
+        List<IStudent> originalList = this.getParticipants();
 
         filteredList = originalList.stream().filter(participant -> participant.getSubject().equals(studyProgram)).toList();
 
@@ -38,10 +46,11 @@ public class Seminar<T extends IStudent> {
 
     public static void main(String[] args) {
         Seminar<PhD> phdStudents = new Seminar<PhD>("Doktorandenseminar", "");
-        phdStudents.addParticipant(new PhD("Adrian",  "Software Engineering"));
+        phdStudents.addParticipant(new PhD("Adrian", "Software Engineering"));
         phdStudents.addParticipant(new PhD("Alice", "Software Engineering"));
         phdStudents.addParticipant(new PhD("Bob", "Algorithmics"));
         phdStudents.addParticipant(new PhD("Charly", "Visual Analytics"));
+        phdStudents.addParticipant(new Student("Zedrick", "Software Engineering"));
 
         Seminar<Student> bachelorStudents = new Seminar<Student>("Seminar Software Engineering", "SSE");
         bachelorStudents.addParticipant(new Student("Zedrick", "Wirtschaftsinformatik"));
@@ -49,6 +58,9 @@ public class Seminar<T extends IStudent> {
         bachelorStudents.addParticipant(new Student("Wladislav", "Mathematik"));
         bachelorStudents.addParticipant(new Student("Xenia", "Informatik"));
         bachelorStudents.addParticipant(new Student("Udo", "Informatik"));
+        bachelorStudents.addParticipant(new PhD("Adrian", "Informatik"));
+        bachelorStudents.addParticipants(phdStudents.getParticipants());
+
 
         System.out.println(phdStudents.getParticipantsFromStudyProgram("Software Engineering"));
         System.out.println();
@@ -62,6 +74,8 @@ public class Seminar<T extends IStudent> {
         System.out.println(bachelorStudents.getParticipantsFromStudyProgram("Mathematik"));
         System.out.println();
         System.out.println(bachelorStudents.getParticipantsFromStudyProgram("Informatik"));
+        System.out.println();
+        System.out.println(bachelorStudents.getParticipantsFromStudyProgram("Software Engineering"));
         System.out.println();
     }
 }
