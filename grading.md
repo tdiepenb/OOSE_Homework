@@ -9,3 +9,17 @@
 | 3         | 2.5/2.5    |
 | **Total** | 10.0 /10.0 |
 
+
+
+## HW2
+
+| Exercise  | Points     |
+|-----------|------------|
+| 1         | 4/4        |
+| 2         | 4/4        |
+| 3         | 2/2        |
+| **Total** | 10.0 /10.0 |
+
+- Exercise 1: Nice use of streams.
+- Exercise 3: Accessing internals of another object (student to learninggroup.studentList) is bad practice. 
+You can rather just use the + operator on learning group.
