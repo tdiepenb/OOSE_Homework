@@ -8,7 +8,6 @@ public class UniMember implements UniMemberInterface{
         this.name = name;
     }
 
-    @Override
     public String getName() {
         return this.name;
     }
