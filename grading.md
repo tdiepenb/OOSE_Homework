@@ -23,3 +23,15 @@
 - Exercise 1: Nice use of streams.
 - Exercise 3: Accessing internals of another object (student to learninggroup.studentList) is bad practice. 
 You can rather just use the + operator on learning group.
+
+
+## HW3
+
+| Exercise  | Points     |
+|-----------|------------|
+| 1         | 4/4        |
+| 2         | 2/2        |
+| 3         | 4/4        |
+| **Total** | 10.0 /10.0 |
+
+Exercise 3: You found the bug with TC6!
