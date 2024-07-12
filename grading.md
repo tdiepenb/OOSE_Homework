@@ -35,3 +35,16 @@ You can rather just use the + operator on learning group.
 | **Total** | 10.0 /10.0 |
 
 Exercise 3: You found the bug with TC6!
+
+
+## HW4
+
+| Exercise  | Points    |
+|-----------|-----------|
+| 1         | 3/3       |
+| 2         | 4/4       |
+| 3         | 3/3       |
+| **Total** | 10.0/10.0 |
+
+
+## Total: 40.0 / 40.0 (100%) -> 10% Bonus
